@@ -1,9 +1,11 @@
-import React from "react";
-import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import React, {useState} from "react";
+import {StatusBar, StyleSheet, Text, TouchableOpacity, View} from "react-native";
+import {Colors} from "../values/Colors";
 
 const Main = (props) => {
     return (
         <View style={styles.mainView}>
+            <StatusBar backgroundColor = {Colors.blue}/>
             <TouchableOpacity style={[styles.button, {borderColor: 'green'}]} onPress={() => props.navigation.navigate("Search")}>
                 <Text style={styles.text}>Test OpenClassRooms</Text>
             </TouchableOpacity>
@@ -30,7 +32,6 @@ const styles = StyleSheet.create({
     button: {
         margin: 20,
         padding: 10,
-        backgroundColor: 'white',
         color: 'black',
         borderWidth: 2,
         borderStyle: "solid",

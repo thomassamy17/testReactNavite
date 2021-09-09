@@ -15,7 +15,6 @@ export const getCategories = () => {
 }
 
 export const getProductsListWithCategory = (urlCat) => {
-    console.log(urlCat)
     return fetch(urlCat)
         .then((response) => response.json())
         .catch((error) => console.error(error))

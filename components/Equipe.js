@@ -1,6 +1,8 @@
 import React, {useState} from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import LottieView from "lottie-react-native";
+import {openWebView} from "./Tools";
+import {Colors} from "../values/Colors";
 
 const Equipe = (props) => {
 
@@ -40,14 +42,25 @@ const Equipe = (props) => {
         setTimeout(() => {setTimePassed(true)},900)
         if (timePassed) {
             return (
-                <View style={styles.mainView}>
-                    {users.map((user) => (
-                        <TouchableOpacity style={styles.button}
-                            onPress={() => props.navigation.navigate("MemberDetails", {member: user})}>
-                        <Text style={styles.buttonText}>{user.name}</Text>
+                <View style={{flex:1}}>
+                    <View style={styles.mainView}>
+                        {users.map((user) => (
+                            <TouchableOpacity style={styles.button}
+                                              onPress={() => props.navigation.navigate("MemberDetails", {member: user})}>
+                                <Text style={styles.buttonText}>{user.name}</Text>
+                            </TouchableOpacity>
+                        ))}
+                    </View>
+                    <View>
+                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.epsi.fr","EPSI")}}>
+                            <Text style={styles.buttonLinkText}>Site de l'EPSI</Text>
                         </TouchableOpacity>
-                    ))}
+                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.snapp.fr","Snapp'")}}>
+                            <Text style={styles.buttonLinkText}>Site de Snapp'</Text>
+                        </TouchableOpacity>
+                    </View>
                 </View>
+
             )
         }
     }
@@ -63,21 +76,39 @@ const Equipe = (props) => {
 const styles = StyleSheet.create({
     mainView: {
         flex: 1,
-        paddingStart: 20,
-        paddingEnd: 20,
         paddingTop: 100
     },
     button: {
-        margin: 10,
-        padding: 10,
-        backgroundColor: 'white',
-        color: 'black',
-        borderWidth: 2,
-        borderStyle: "solid",
-        borderRadius: 25,
+        marginBottom: 10,
+        borderRadius: 10,
+        backgroundColor: Colors.transparent,
+        borderWidth: 1,
+        paddingTop: 11,
+        paddingBottom: 12,
+        paddingStart: 15,
+        paddingEnd: 15,
+        marginStart: 16,
+        marginEnd: 16
+    },
+    buttonLink: {
+        marginBottom: 10,
+        borderRadius: 10,
+        backgroundColor: Colors.blue,
+        borderWidth: 1,
+        paddingTop: 11,
+        paddingBottom: 12,
+        paddingStart: 15,
+        paddingEnd: 15,
+        marginStart: 16,
+        marginEnd: 16
     },
     buttonText: {
         textAlign: "center"
+    },
+    buttonLinkText: {
+        textAlign: "center",
+        color: Colors.black,
+        fontSize: 15
     }
 })
 
