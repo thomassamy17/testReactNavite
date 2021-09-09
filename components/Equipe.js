@@ -7,18 +7,22 @@ const Equipe = (props) => {
     const users = [{
         name: 'Thomas SAMY',
         fonction: 'Alternant développeur mobile',
-        email: 'tsamy@snapp.fr'
+        email: 'tsamy@snapp.fr',
+        image: 'https://cdn.futura-sciences.com/buildsv6/images/wide1920/6/5/2/652a7adb1b_98148_01-intro-773.jpg'
     }, {
         name: 'Maxime DUBOIS',
         fonction: 'Chef de projet',
-        email: 'mdubois@snapp.fr'
+        email: 'mdubois@snapp.fr',
+        image: 'https://www.publicdomainpictures.net/pictures/320000/velka/background-image.png'
     }, {
         name: 'Nidal DJEMAM',
         fonction: 'Lead Dev Mobile',
-        email: 'ndjemam@snapp.fr'
+        email: 'ndjemam@snapp.fr',
+        image: 'https://cdn.pixabay.com/photo/2016/05/05/02/37/sunset-1373171__340.jpg'
     }]
 
     const [transition, setTransition] = useState(true)
+    const [timePassed, setTimePassed] = useState(false)
 
     const showTransition = () => {
         if (transition) {
@@ -33,7 +37,8 @@ const Equipe = (props) => {
     }
 
     const showMenu = () => {
-        if (!transition) {
+        setTimeout(() => {setTimePassed(true)},900)
+        if (timePassed) {
             return (
                 <View style={styles.mainView}>
                     {users.map((user) => (
