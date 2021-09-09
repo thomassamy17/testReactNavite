@@ -46,7 +46,7 @@ const App = () => {
                 <Stack.Screen name="MemberDetails" component={MemberDetails}
                               options={({route}) => ({title: route.params.member.name})}/>
                 <Stack.Screen name="WebViewCustom" component={WebViewCustom}
-                              options={({route}) => ({title: (route.params.title !== undefined ? route.params.title : "prout")})}/>
+                              options={({route}) => ({title: (route.params.title !== undefined ? route.params.title : "No Title Test")})}/>
             </Stack.Navigator>
         </NavigationContainer>
     );

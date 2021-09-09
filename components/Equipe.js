@@ -52,10 +52,10 @@ const Equipe = (props) => {
                         ))}
                     </View>
                     <View>
-                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.epsi.fr","EPSI")}}>
+                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.epsi.fr")}}>
                             <Text style={styles.buttonLinkText}>Site de l'EPSI</Text>
                         </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.snapp.fr","Snapp'")}}>
+                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.snapp.fr")}}>
                             <Text style={styles.buttonLinkText}>Site de Snapp'</Text>
                         </TouchableOpacity>
                     </View>
