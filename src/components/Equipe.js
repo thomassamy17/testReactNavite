@@ -2,9 +2,12 @@ import React, {useState} from "react";
 import {StyleSheet, Text, TouchableOpacity, View} from "react-native";
 import LottieView from "lottie-react-native";
 import {openWebView} from "./Tools";
-import {Colors} from "../values/Colors";
+import {ClearColors} from "../values/ClearColors";
+import {useSelector as useReduxSelector} from "react-redux";
 
 const Equipe = (props) => {
+
+    const colors = useReduxSelector((state) => state.toggleColor.colors)
 
     const users = [{
         name: 'Thomas SAMY',
@@ -29,7 +32,7 @@ const Equipe = (props) => {
     const showTransition = () => {
         if (transition) {
             return (
-                <LottieView source={require('../assets/lottie/transition-up.json')} autoPlay={true} loop={false}
+                <LottieView source={require('../../assets/lottie/transition-up.json')} autoPlay={true} loop={false}
                             resizeMode={"cover"} onAnimationFinish={() => {
                     setTransition(false)
                 }}/>
@@ -45,18 +48,15 @@ const Equipe = (props) => {
                 <View style={{flex:1}}>
                     <View style={styles.mainView}>
                         {users.map((user) => (
-                            <TouchableOpacity style={styles.button}
+                            <TouchableOpacity style={[styles.button,{borderColor: colors.black}]}
                                               onPress={() => props.navigation.navigate("MemberDetails", {member: user})}>
-                                <Text style={styles.buttonText}>{user.name}</Text>
+                                <Text style={[styles.buttonText,{color: colors.black}]}>{user.name}</Text>
                             </TouchableOpacity>
                         ))}
                     </View>
                     <View>
-                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.epsi.fr")}}>
-                            <Text style={styles.buttonLinkText}>Site de l'EPSI</Text>
-                        </TouchableOpacity>
-                        <TouchableOpacity style={styles.buttonLink} onPress={() => {openWebView(props.navigation,"https://www.snapp.fr")}}>
-                            <Text style={styles.buttonLinkText}>Site de Snapp'</Text>
+                        <TouchableOpacity style={[styles.buttonLink,{backgroundColor: colors.red_light,borderColor: colors.black}]} onPress={() => {openWebView(props.navigation,"https://api.instagram.com/oauth/authorize?client_id=379210597006417&redirect_uri=https://tsamy.com/auth&scope=user_profile,user_media&response_type=code")}}>
+                            <Text style={[styles.buttonLinkText,{color: colors.black}]}>Site de Snapp'</Text>
                         </TouchableOpacity>
                     </View>
                 </View>
@@ -66,7 +66,7 @@ const Equipe = (props) => {
     }
 
     return (
-        <View style={{flex: 1}}>
+        <View style={{flex: 1, backgroundColor: colors.white}}>
             {showMenu()}
             {showTransition()}
         </View>
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     button: {
         marginBottom: 10,
         borderRadius: 10,
-        backgroundColor: Colors.transparent,
+        backgroundColor: ClearColors.transparent,
         borderWidth: 1,
         paddingTop: 11,
         paddingBottom: 12,
@@ -93,7 +93,6 @@ const styles = StyleSheet.create({
     buttonLink: {
         marginBottom: 10,
         borderRadius: 10,
-        backgroundColor: Colors.blue,
         borderWidth: 1,
         paddingTop: 11,
         paddingBottom: 12,
@@ -107,9 +106,9 @@ const styles = StyleSheet.create({
     },
     buttonLinkText: {
         textAlign: "center",
-        color: Colors.black,
         fontSize: 15
     }
 })
 
 export default Equipe
+

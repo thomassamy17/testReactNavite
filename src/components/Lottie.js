@@ -5,7 +5,7 @@ import {View} from "react-native";
 const Lottie = () => {
     return (
         <View style={{flex: 1, backgroundColor:'#F7DD7C'}}>
-            <LottieView source={require('../assets/lottie/cat_loader.json')} autoPlay loop/>
+            <LottieView source={require('../../assets/lottie/cat_loader.json')} autoPlay loop/>
         </View>
     )
 }

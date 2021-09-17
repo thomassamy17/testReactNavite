@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "702509043538",
+    "project_id": "testreact-a66a3",
+    "storage_bucket": "testreact-a66a3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:702509043538:android:00a29b0170e8a7a601348b",
+        "android_client_info": {
+          "package_name": "com.tsamy.react"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "702509043538-c2e1cehrsmjn88v2cihlil5qsc4t58ea.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBMYDzlZVN2Hzd3-TlSViNxbFkY3Fg0PhE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "702509043538-c2e1cehrsmjn88v2cihlil5qsc4t58ea.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
