@@ -29,6 +29,9 @@ const Main = (props) => {
             <TouchableOpacity style={[styles.button, {borderColor: 'grey'}]} onPress={() => setModalVisible(!modalVisible)}>
                 <Text style={[styles.text,{color: colors.black}]}>Custom alert test</Text>
             </TouchableOpacity>
+            <TouchableOpacity style={[styles.button, {borderColor: 'black'}]} onPress={() => props.navigation.navigate("NFC")}>
+                <Text style={[styles.text,{color: colors.black}]}>NFC test</Text>
+            </TouchableOpacity>
         </View>
     )
 }

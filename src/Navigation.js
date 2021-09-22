@@ -13,6 +13,7 @@ import WebViewCustom from "./components/WebViewCustom";
 import {NavigationContainer} from "@react-navigation/native";
 import {createNativeStackNavigator} from "@react-navigation/native-stack";
 import CustomModalDarkMode from "./components/CustomModalDarkMode";
+import TestNFC from "./components/NFC";
 
 const Stack = createNativeStackNavigator();
 
@@ -55,6 +56,7 @@ const Navigation = (props) => {
                               options={({route}) => ({title: route.params.member.name})}/>
                 <Stack.Screen name="WebViewCustom" component={WebViewCustom}
                               options={({route}) => ({title: (route.params.title !== undefined ? route.params.title : "No Title Test")})}/>
+                <Stack.Screen name="NFC" component={TestNFC} options={{title: 'NFC Test'}}/>
             </Stack.Navigator>
         </NavigationContainer>
     )

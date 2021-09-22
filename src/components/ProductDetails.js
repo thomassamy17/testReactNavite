@@ -25,7 +25,7 @@ const ProductDetails = (props) => {
                 onPress={addFavorite}
                 style={styles.fab}>
                 <Image
-                    source={(favoriteProducts.findIndex(item => item.name === product.name) === -1) ? require('../../assets/heart_empty.png') : require('../../assets/heart_fill.png')}
+                    //source={(favoriteProducts.findIndex(item => item.name === product.name) === -1) ? require('../../assets/heart_empty.png') : require('../../assets/heart_fill.png')}
                     style={styles.floatingButtonStyle}
                 />
             </TouchableOpacity>
